@@ -36,7 +36,9 @@ def check_notice():
     response = requests.get(RSS_URL)
     root = ET.fromstring(response.content)
 
-    latest = root.find("./channel/item")
+    # 모든 item 중 첫 번째 가져오기
+    latest = root.findall(".//item")[0]
+
     title = latest.find("title").text
     link = latest.find("link").text
     guid = latest.find("guid").text
@@ -44,10 +46,9 @@ def check_notice():
     last_id = get_last_id()
 
     if guid != last_id:
-        message = f"🚨 KISA 보안공지\n\n{title}\n{link}"
+        message = f"📢 KISA 보안공지\n\n{title}\n{link}"
         send_telegram(message)
         save_last_id(guid)
-
 
 if __name__ == "__main__":
     check_notice()
