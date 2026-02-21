@@ -7,7 +7,7 @@ TOKEN = os.environ.get("TELEGRAM_TOKEN")
 CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 # ===== KISA RSS 주소 =====
-RSS_URL = "https://www.boho.or.kr/kr/bbs/list.do?menuNo=205020&bbsId=B0000133"
+RSS_URL = "https://knvd.krcert.or.kr/rss/securityNotice.do"
 
 # ===== 텔레그램 전송 =====
 def send_telegram(message):
