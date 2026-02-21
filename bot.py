@@ -49,6 +49,3 @@ def check_notice():
         message = f"📢 KISA 보안공지\n\n{title}\n{link}"
         send_telegram(message)
         save_last_id(guid)
-
-if __name__ == "__main__":
-    check_notice()
