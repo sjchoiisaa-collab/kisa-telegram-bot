@@ -9,7 +9,7 @@ message = "🔥 KISA 보안 공지 테스트 메시지"
 url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
 payload = {
-    "chat_id": 8518888462,
+    "chat_id": CHAT_ID,
     "text": message
 }
 
